@@ -1,5 +1,6 @@
 <?php
 require 'class/Saquence.php';
+require 'class/log.php';
 require 'function/function.php';
 
 $n = 20;

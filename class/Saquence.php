@@ -17,7 +17,7 @@ class Sequence
      */
     public function add(int $n)
     {
-        $this->log('Добавить элемент в массив', $n);
+        Log::add('Добавить элемент в массив', $n);
         $this->n[] = $n;
     }
 
@@ -33,7 +33,7 @@ class Sequence
 
             $temp[] = array_shift($this->n);
         }
-        $this->log("Возрат массива с кол-во элементов {$this->m}", $temp);
+        Log::add("Возрат массива с кол-во элементов {$this->m}", $temp);
         return $temp;
     }
 
@@ -43,19 +43,9 @@ class Sequence
     protected function sort()
     {
         rsort($this->n);
-        $this->log("Сортировка массива в порядку убывания", $this->n);
+        Log::add("Сортировка массива в порядку убывания", $this->n);
     }
 
-    protected function log($mess, $data)
-    {
-        $current = '';
-        if (file_exists('log/log.txt')) {
-            $current = file_get_contents('log/log.txt');
-        }
-
-        $current .= date('Y-m-d H:i:s') . ' ' . $mess . "\n" . ' ' . print_r($data, true) . "\n" . '----------' . "\n";
-        file_put_contents('log/log.txt', $current);
-    }
 
 
 }
