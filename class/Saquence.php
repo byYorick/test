@@ -9,6 +9,7 @@ class Sequence
     public function __construct(int $m)
     {
         $this->m = $m;
+        Logger::$PATH =  'log';
     }
 
     /**
@@ -17,35 +18,33 @@ class Sequence
      */
     public function add(int $n)
     {
-        Log::add('Добавить элемент в массив', $n);
-        $this->n[] = $n;
+        if (count($this->n) < $this->m) {
+            $this->n[] = $n;
+            Logger::getLogger('sequence')->log("Добавить элемент в массив $n");
+        } else {
+            $min = min($this->n);
+            if ($n > $min) {
+                Logger::getLogger('sequence')->log("Заменить элемент массива $min на $n");
+                $key = array_search($min, $this->n);
+                unset($this->n[$key]);
+                $this->n[$key] = $n;
+            }
+        }
+
     }
 
     /**
-     * Возратить массив с числами в порядке убывания с кол0во элементов $m
+     * Возратить массив с числами
      * @return array
      */
     public function getMaxNumbers(): array
     {
-        $this->sort();
-
-        for ($i = 0; $i < $this->m; $i++) {
-
-            $temp[] = array_shift($this->n);
-        }
-        Log::add("Возрат массива с кол-во элементов {$this->m}", $temp);
-        return $temp;
+        return $this->n;
     }
 
-    /**
-     *Сортирует массив в порядке убывния
-     */
-    protected function sort()
+    public function __destruct()
     {
-        rsort($this->n);
-        Log::add("Сортировка массива в порядку убывания", $this->n);
+        unset($this->n);
+        unset($this->m);
     }
-
-
-
 }
