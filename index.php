@@ -1,5 +1,5 @@
 <?php
-$time = microtime();
+$time = microtime(true);
 require 'class/Saquence.php';
 require 'class/logger.php';
 require 'function/function.php';
@@ -19,4 +19,4 @@ echo '<pre>';
 print_r($arr);
 echo '</pre>';
 
-echo (microtime()-$time);
+echo (microtime(true)-$time);
