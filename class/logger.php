@@ -3,7 +3,7 @@
 class Logger
 {
     //статические переменные
-    public static $PATH;
+    public static $PATH = PATH;
     protected static $loggers = array();
 
     protected $name;

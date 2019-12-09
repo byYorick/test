@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cfa1d1b-5a35-4210-a13e-47a92aa4fd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/class/logger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/Saquence.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Saquence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/logger.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/logger.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/sequence.log" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,9 @@
       <updated>1575532174658</updated>
       <workItem from="1575532175820" duration="6144000" />
       <workItem from="1575552939356" duration="43000" />
-      <workItem from="1575639444806" duration="3475000" />
+      <workItem from="1575639444806" duration="9310000" />
+      <workItem from="1575825761730" duration="6373000" />
+      <workItem from="1575897606745" duration="1863000" />
     </task>
     <servers />
   </component>

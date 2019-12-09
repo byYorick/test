@@ -5,11 +5,12 @@ class Sequence
 {
     protected $m;
     protected $n = array();
+    protected $logger;
 
-    public function __construct(int $m)
+    public function __construct(int $m, Logger $logger)
     {
+        $this->logger = $logger;
         $this->m = $m;
-        Logger::$PATH =  'log';
     }
 
     /**
@@ -20,13 +21,12 @@ class Sequence
     {
         if (count($this->n) < $this->m) {
             $this->n[] = $n;
-            Logger::getLogger('sequence')->log("Добавить элемент в массив $n");
+            $this->logger->log("Добавить элемент в массив $n");
         } else {
             $min = min($this->n);
             if ($n > $min) {
-                Logger::getLogger('sequence')->log("Заменить элемент массива $min на $n");
+                $this->logger->log("Заменить элемент массива $min на $n");
                 $key = array_search($min, $this->n);
-                unset($this->n[$key]);
                 $this->n[$key] = $n;
             }
         }
