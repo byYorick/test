@@ -13,10 +13,10 @@ $sequence = new Sequence($m, $logger);
 foreach ($digits($n) as $number) {
     $sequence->add($number);
 }
-$arr = $sequence->getMaxNumbers();
+
 
 echo '<pre>';
-print_r($arr);
+print_r($sequence->getMaxNumbers());
 echo '</pre>';
 
 echo (microtime(true)-$time);
